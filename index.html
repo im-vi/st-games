@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://sejmtracker.pl/assets/style.css">
+    <link rel="stylesheet" href="https://sejmtracker.pl/assets/navbar.css">
+    <script src="https://sejmtracker.pl/scripts/navbar.js"></script>
+    <script src="https://sejmtracker.pl/scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/1074444b18.js" crossorigin="anonymous"></script>
+    <title>SejmTracker</title>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <h1 class="logo">Witaj w <span id="logo-1">Sejm</span><span id="logo-2">Tracker</span> Games!</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Więcej informacji już wkrótce.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        Wersja v<span id="ver"></span><br>
+        SejmTracker Games powered by Pahad<br>
+        &copy; 2024 SejmTracker. Wszelkie prawa zastrzeżone.<br><br>
+        Dane &copy; <a href="https://sejm.gov.pl/">System Informacyjny Sejmu</a> &bull; <a href="https://sejmtracker.pl/contact.html" target="_blank">Kontakt</a> &bull; <a href="https://sejmtracker.pl/privacy-policy.html">Polityka prywatności</a>
+        <br>
+        <p>
+            <a href="https://instagram.com/sejmtracker.pl" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/im-vi/SejmTracker" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://youtube.com/@sejmtracker" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        </p> 
+    </footer>
+    <script>
+        updateNavbar();
+
+        fetch(`https://sejmtracker.pl/assets/data.json`)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            ver.textContent = data.version;
+        })
+    </script>
+</body>
+</html>
